@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- , the form view is still
+    used when you create an action type from an action via the M2O widget -->
+    <record id="hotel_type_form" model="ir.ui.view">
+        <field name="name">turismo.hotel.type.form</field>
+        <field name="model">turismo.hotel</field>
+        <field name="arch" type="xml">
+            <form>
+                <group name="main">
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_turismo_hotel_type_view"  model="ir.actions.act_window">
+        <field name="name">Actions</field>
+        <field name="res_model">turismo.hotel</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <menuitem
+        id="menu_top_turismo"
+        name="Turismo"
+        />
+    
+    <menuitem
+        id="configuracion_turismo"
+        name="Configuracion"
+        parent="menu_top_turismo"
+        />
+    
+    <menuitem
+        id="hotel_turismo"
+        name="Hotel"
+        parent="configuracion_turismo"
+        action="action_turismo_hotel_type_view"
+        />
+
+</odoo>
